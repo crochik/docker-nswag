@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine3.14
+FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine	
 
 LABEL org.opencontainers.image.source="https://github.com/Countingup/docker-nswag"
 
@@ -8,5 +8,5 @@ RUN apk add --no-cache --update --upgrade ncurses-terminfo-base libssl1.1 libcry
     && apk del unzip curl git \
     && rm -f NSwag.zip
 
-ENTRYPOINT ["dotnet", "NSwag/Net50/dotnet-nswag.dll"]
+ENTRYPOINT ["dotnet", "NSwag/Net70/dotnet-nswag.dll"]
 CMD ["version"]
